@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .mouse-stalker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300vw;
+  position: fixed;
+  top: -150vh;
+  left: -150vw;
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+}
+
+.mouse-stalker > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+}
+h1{
+    color:white;
+    z-index: 10;
+}
+.content1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height:100vh;
+}
+
+
+    </style>
+    <script>
+
+// マウスストーカー要素
+var mouseStalker
+
+// マウスストーカー要素の位置
+var stalker = {
+  x: 0,
+  y: 0
+}
+
+// マウスの位置
+var mouse = {
+  x: 0,
+  y: 0
+}
+
+// 読み込み後に初期化をするためのハンドラ
+document.addEventListener('DOMContentLoaded', setup)
+
+// マウスの動きを監視
+document.addEventListener('mousemove', mousemove)
+
+// 初期化処理
+function setup() {
+  // マウスストーカー要素を取得
+  mouseStalker = document.querySelector('.mouse-stalker')
+
+  // 更新処理を開始
+  update()
+}
+
+// マウスが動くたびにマウスの位置を保持しておく
+function mousemove(e) {
+  mouse.x = e.clientX
+  mouse.y = e.clientY
+}
+
+// 更新処理
+function update() {
+  // マウスストーカー要素の位置を更新
+  stalker.x += (mouse.x - stalker.x) * 0.1
+  stalker.y += (mouse.y - stalker.y) * 0.1
+
+  // マウスストーカーの位置を小数点第一位まで四捨五入
+  var x = Math.round(stalker.x * 10) / 10
+  var y = Math.round(stalker.y * 10) / 10
+
+  // マウスストーカー要素のスタイルを更新
+  mouseStalker.style.transform = `translate3d(` + x + 'px,' + y + 'px, 0)'
+
+  // ループ
+  requestAnimationFrame(update)
+}
+window.addEventListener('DOMContentLoaded', function() {
+    content1.addEventListener('click', () => {
+      content1.style.display = 'none';
+      content2.style.display = 'flex';
+    });
+    content1.addEventListener("click", (e) => {
+    video.playbackRate = 15.0;
+  });
+  
+});
+window.addEventListener('DOMContentLoaded', function() {
+    content2.addEventListener('click', () => {
+      content2.style.display = 'none';
+      content1.style.display = 'flex';
+    });
+    content2.addEventListener("click", (e) => {
+    video.playbackRate = 1.0;
+  });
+  
+});
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <div class="wp">
+        <video class="mouse-stalker" id="video" src="27726-365890980_medium.mp4" loop muted autoplay playsinline></video>
+
+            <div class="content1" id="content1">
+                <h1>スタート</h1>
+                <h1>加速</h1>
+            </div>
+            <div class="content1" id="content2">
+                <h1>ストップ
+                </h1>
+
+            </div>
+          </div>
+
+    </div>
+</body>
+</html>
