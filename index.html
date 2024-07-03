@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+      .wp2{
+        display:none;
+      }
+
+      .mouse-stalker2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300vw;
+  position: fixed;
+  top: -150vh;
+  left: -150vw;
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+  z-index: 1;
+}
+.mouse-stalker2 > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+}
      .mouse-stalker {
   display: flex;
   align-items: center;
@@ -15,7 +38,10 @@
   left: -150vw;
   pointer-events: none;
   mix-blend-mode: exclusion;
+  z-index: 1;
 }
+
+
 
 .mouse-stalker > div {
   width: 50px;
@@ -29,11 +55,15 @@ h1{
     z-index: 10;
 }
 .content1{
+  color:white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     height:100vh;
+}
+.step{
+  color:white;
 }
 
 
@@ -58,13 +88,15 @@ var mouse = {
 // 読み込み後に初期化をするためのハンドラ
 document.addEventListener('DOMContentLoaded', setup)
 
+
+
 // マウスの動きを監視
 document.addEventListener('mousemove', mousemove)
 
 // 初期化処理
 function setup() {
-  // マウスストーカー要素を取得
   mouseStalker = document.querySelector('.mouse-stalker')
+
 
   // 更新処理を開始
   update()
@@ -78,6 +110,7 @@ function mousemove(e) {
 
 // 更新処理
 function update() {
+ 
   // マウスストーカー要素の位置を更新
   stalker.x += (mouse.x - stalker.x) * 0.1
   stalker.y += (mouse.y - stalker.y) * 0.1
@@ -105,7 +138,7 @@ window.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('DOMContentLoaded', function() {
     content2.addEventListener('click', () => {
       content2.style.display = 'none';
-      content1.style.display = 'flex';
+      content3.style.display = 'flex';
     });
     content2.addEventListener("click", (e) => {
     video.playbackRate = 1.0;
@@ -114,13 +147,26 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 
+window.addEventListener('DOMContentLoaded', function() {
+    step.addEventListener('click', () => {
+      wp2.style.display = 'block';
+      wp.style.display = 'none';
+      video.playbackRate = 15.0;
+      console.log("test3");
+      mouseStalker = document.querySelector('.mouse-stalker2')
+    });
+  
+});
+
+
+
 
 
 
     </script>
 </head>
 <body>
-    <div class="wp">
+    <div class="wp" id="wp">
         <video class="mouse-stalker" id="video" src="27726-365890980_medium.mp4" loop muted autoplay playsinline></video>
 
             <div class="content1" id="content1">
@@ -130,10 +176,24 @@ window.addEventListener('DOMContentLoaded', function() {
             <div class="content1" id="content2">
                 <h1>ストップ
                 </h1>
+                </div>
+                <div class="step" >
+                  <p id="step">最初に戻る</p>
+                </div>
+            <div class="content1" id="content3">
+              <h1>content3
+              </h1>
+              <h2>クリックしてつぎを見ましょう
+              </h2>
 
-            </div>
+          </div>
           </div>
 
     </div>
+
+
+    <div class="wp2" id="wp2">
+      <video class="mouse-stalker2" id="video2" src="video2.mp4" loop muted autoplay playsinline></video>
+  </div>
 </body>
 </html>
