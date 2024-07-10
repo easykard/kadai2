@@ -3,10 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>不思議の宇宙</title>
     <style>
+      .blinking{
+	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
+    -moz-animation:blink 1.5s ease-in-out infinite alternate;
+    animation:blink 1.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+      .content9-1{
+        margin-top:100px;
+      }
+      .txt {
+    display: flex;
+    overflow: hidden;
+}
+
+.txt p {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: .06em;
+    margin: 0;
+
+    /* ここからアニメーション関係 */
+    transform: translateY(2em);
+    animation: textanimation 1s forwards;
+}
+/* 1文字目 */
+.txt p:nth-child(1) {
+    animation-delay: 0.2s
+}
+/* 2文字目 */
+.txt p:nth-child(2) {
+    animation-delay: 0.4s
+}
+/* 3文字目 */
+.txt p:nth-child(3) {
+    animation-delay: 0.6s
+}
+/* 4文字目 */
+.txt p:nth-child(4) {
+    animation-delay: 0.8s
+}
+/* 5文字目 */
+.txt p:nth-child(5) {
+    animation-delay: 1s
+}
+/* 6文字目 */
+.txt p:nth-child(6) {
+    animation-delay: 1.2s
+}
+/* 7文字目 */
+.txt p:nth-child(7) {
+    animation-delay: 1.4s
+}
+/* 8文字目 */
+.txt p:nth-child(8) {
+    animation-delay: 1.6s
+}
+/* 9文字目 */
+.txt p:nth-child(9) {
+    animation-delay: 1.8s
+}
+/* 10文字目 */
+.txt p:nth-child(10) {
+    animation-delay: 2s
+}
+/* 11文字目 */
+.txt p:nth-child(11) {
+    animation-delay: 2.2s
+}
+/* 12文字目 */
+.txt p:nth-child(12) {
+    animation-delay: 2.4s
+}
+
+
+@keyframes textanimation {
+    0% {
+        transform: translateY(2em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+      .content5{
+        justify-content: center;
+      }
+      .content5-wp{
+        width:826px;
+        color:white;
+        height:100vh;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        display:flex;
+      }
+      .content4{
+        color:white;
+        align-items: center;
+        justify-content: center;
+        height:100vh;
+        flex-flow: column;
+        opacity: 0.7;
+      }
+      .content5{
+        display:none;
+      }
+      .wp2-content{
+        color:white;
+      }
       .wp2{
         display:none;
+      }
+      .content3-wp{
+        text-align: center;
       }
 
       .mouse-stalker2 {
@@ -65,8 +189,9 @@ h1{
 .step{
   color:white;
 }
-
-
+.content-k{
+        display: none;
+      }
     </style>
     <script>
 
@@ -146,15 +271,142 @@ window.addEventListener('DOMContentLoaded', function() {
   
 });
 
+window.addEventListener('DOMContentLoaded', function() {
+    content3.addEventListener('click', () => {
+      content3.style.display = 'none';
+      content4.style.display = 'flex';
+    });
+    content3.addEventListener("click", (e) => {
+    video.playbackRate = 15.0;
+  });
+  
+});
 
+window.addEventListener('DOMContentLoaded', function() {
+    content4.addEventListener('click', () => {
+      content4.style.display = 'none';
+      content5.style.display = 'flex';
+    });
+    content4.addEventListener("click", (e) => {
+    video.playbackRate = 1.0;
+
+    
+    
+
+  });
+  
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    content5.addEventListener('click', () => {
+      content5.style.display = 'none';
+      content6.style.display = 'flex';
+    });
+    content5.addEventListener("click", (e) => {
+    video.playbackRate = 15.0;
+
+    
+    
+
+  });
+  
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    content6.addEventListener('click', () => {
+      content6.style.display = 'none';
+      content7.style.display = 'flex';
+    });
+    content6.addEventListener("click", (e) => {
+    video.playbackRate = 1.0;
+
+    
+    
+
+  });
+  
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    content7.addEventListener('click', () => {
+      content7.style.display = 'none';
+      content8.style.display = 'flex';
+    });
+    content7.addEventListener("click", (e) => {
+    video.playbackRate = 15.0;
+
+    
+    
+
+  });
+  
+});
+window.addEventListener('DOMContentLoaded', function() {
+    content8.addEventListener('click', () => {
+      content8.style.display = 'none';
+      content9.style.display = 'flex';
+    });
+    content8.addEventListener("click", (e) => {
+    video.playbackRate = 1.0;
+
+    
+    
+
+  });
+  
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    content9.addEventListener('click', () => {
+      content10.style.display = 'flex';
+    });
+    content8.addEventListener("click", (e) => {
+    video.playbackRate = 3.0;
+
+    
+    
+
+  });
+  
+});
+window.addEventListener('DOMContentLoaded', function() {
+    content10.addEventListener('click', () => {
+      content11.style.display = 'flex';
+    });
+    content10.addEventListener("click", (e) => {
+    video.playbackRate = 8.0;
+
+    
+    
+
+  });
+  
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    content11.addEventListener('click', () => {
+      content12.style.display = 'flex';
+    });
+    content11.addEventListener("click", (e) => {
+    video.playbackRate = 12.0;
+
+    
+    
+
+  });
+  
+});
 window.addEventListener('DOMContentLoaded', function() {
     step.addEventListener('click', () => {
       wp2.style.display = 'block';
       wp.style.display = 'none';
-      video.playbackRate = 15.0;
+      video.playbackRate = 1.0;
       console.log("test3");
       mouseStalker = document.querySelector('.mouse-stalker2')
     });
+
+
+    
   
 });
 
@@ -170,23 +422,72 @@ window.addEventListener('DOMContentLoaded', function() {
         <video class="mouse-stalker" id="video" src="27726-365890980_medium.mp4" loop muted autoplay playsinline></video>
 
             <div class="content1" id="content1">
-                <h1>スタート</h1>
-                <h1>加速</h1>
+                <h1>ここをクリックしてください</h1>
             </div>
-            <div class="content1" id="content2">
+            <div class="content1 content-k" id="content2" >
                 <h1>ストップ
                 </h1>
                 </div>
-                <div class="step" >
-                  <p id="step">最初に戻る</p>
+                <div class="step ">
+                  <p id="step">終了する</p>
                 </div>
-            <div class="content1" id="content3">
-              <h1>content3
-              </h1>
-              <h2>クリックしてつぎを見ましょう
-              </h2>
-
+            <div class="content1 content-k" id="content3" >
+              <div class="content3-wp">
+              <h1>ここでは私のたどってきた歴史を宇宙史として紹介します</h1>
+              <h2>一度終わると戻ることはできません</h2>
+              <p>文字をクリックすると次にいけます</p>
+            </div>
           </div>
+          
+          <div id="content4" class="content4 content-k">
+            <h1>まずは私の小学生時代を見てみましょう</h1>
+          </div>
+          <div id="content5" class="content5 content-k">
+            <div class="content5-wp">
+            <h1 id="content51">私の小学生の時、ひどいいじめにあっていました</h1>
+            <p>無視されたり、暴力を振るわれたりしていて、なんでこんなことになるのかとかんがえていました。しかし学校に通うことはやめませんでした。それは、なんで悪いことをしたやつが休まないで俺が休まなければいけないのかと、負けた気がするからです。そして中学に希望をもっていました。</p>
+          </div>
+          </div>
+          <div class="content4 content-k" id="content6">
+            <h1>次に私の中学時代をみていきます</h1>
+            <div class="txt">
+            <p>暗</p>
+            <p>い</p>
+            <p>話</p>
+            <p>で</p>
+            <p>す</p>
+            <p>い</p>
+            <p>ま</p>
+            <p>せ</p>
+            <p>ん</p>
+            </div>
+          </div>
+          <div class="content5 content-k" id="content7">
+            <div class="content5-wp">
+              <h1>中学時代は孤独でした</h1>
+              <p>中学に上がって、いじめにあうことはなくなりました。しかし、人間関係がうまく行っているわけではなく、ずっと一人でした。いじめられていたときの方が辛くなかったかもしれません。味方もいませんが、敵もいません。今度は不登校になりました。不登校の間におかあさんとたべた昼ご飯が一番おいしかったです。</p>
+            </div>
+          </div>
+          <div class="content4 content-k" id="content8">
+            <h1>今度は私の高校時代を見ていきます</h1>
+          </div>
+          <div class="content5 content-k" id="content9">
+            <div class="content5-wp">
+            <h1>高校では中学時代が多少マシになったくらいです</h1>
+            <p>私は高校生になって、やっと気づきました。小学生の時も中学生の時も自分の態度に問題があることにおそく気づきました。</p>
+            <div class="content9-1 content-k blinking" id="content10">
+              <p>つぎはありませんよ </p>
+            </div>
+            <div class="content9-1 content-k blinking" id="content11">
+              <p>これから広がっていきます</p>
+            </div>
+            <div class="content9-1 content-k blinking" id="content12">
+              <p>私の宇宙史は終わるまで大きくなります</p>
+            </div>
+          </div>
+          </div>
+
+
           </div>
 
     </div>
@@ -194,6 +495,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
     <div class="wp2" id="wp2">
       <video class="mouse-stalker2" id="video2" src="video2.mp4" loop muted autoplay playsinline></video>
+      <div class="wp2-content">
+
+      </div>
   </div>
 </body>
 </html>
